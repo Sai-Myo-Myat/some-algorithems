@@ -1,4 +1,4 @@
-//finding out miniman and maximan value of an array
+//minSum and maxSum of 4 of 5 integers
 const arr = [1,3,5,7,9]
 
 let maxNum = arr[0];
