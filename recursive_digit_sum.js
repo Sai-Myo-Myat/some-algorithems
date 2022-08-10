@@ -22,7 +22,7 @@
 // }
 // superDigit(148,3)
 
-const findSum = (num) => {
+const findSum = (num,k) => {
   if(num < 10){
      return num;
   }
@@ -31,6 +31,8 @@ const findSum = (num) => {
   return findSum(lastDigit + findSum(remainingNum));
 }
 console.log(findSum(2568));
+
+findSum(8,findSum(7,findSum(6,3)))
 
 
 // function superDigit(n, k) {
