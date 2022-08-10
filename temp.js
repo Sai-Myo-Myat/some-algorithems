@@ -12,7 +12,7 @@ const fun  = (range) => {
     }
     mainArr = newArr
     
-    console.center(newArr.join(" "))
+    console.log(newArr.join(" "))
   }
 }
 
