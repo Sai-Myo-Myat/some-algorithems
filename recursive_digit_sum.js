@@ -1,38 +1,31 @@
 //recursive_digit_sum
-//it's not a good approach, and not convenience if input is too large, it's will be abort called err. I'm gonna update later...
 
-
-// function superDigit(n, k) {
-//   // Write your code here
-//   console.log("here")
-//   let sum = 0;
-
-//   const recurse = (n) => {
-//     if(n.length === 1 ) {
-//       console.log(n)
-//       return n;
-//     }
-//     const integers = n.toString().split("")
-//     sum = integers.map(integer => sum += integer);
-//     return recurse(sum)
-//   }
-//   console.log(n)
-//   return recurse(n)
-    
-// }
-// superDigit(148,3)
-
-const findSum = (num,k) => {
-  if(num < 10){
-     return num;
-  }
-  const lastDigit = num % 10;
-  const remainingNum = Math.floor(num / 10);
-  return findSum(lastDigit + findSum(remainingNum));
+function superDigit(n, k) {
+  // Write your code here
+  let sum = 0;
+  const numArr = n.toString().split('');
+  numArr.map(num => {
+    sum += parseInt(num);
+  })
+  sum *= k;
+  //this part(resucre fun) is referenced from tutorialspoint.com
+  const recurse = (number) => {
+    if(number < 10) {
+      return number;
+    }
+    const lastNum = Math.floor(number % 10);
+    const remainingNum = Math.floor(number / 10);
+    return recurse(lastNum + recurse(remainingNum))
+  } 
+  const ans = recurse(sum)
+  console.log(ans)
+  return ans;
 }
-console.log(findSum(2568));
+superDigit(148,3)
 
-findSum(8,findSum(7,findSum(6,3)))
+
+//-- my first approach 
+//it's not a good one, and not convenience if input is too large, it will be abort called err. I'm gonna update later...
 
 
 // function superDigit(n, k) {
