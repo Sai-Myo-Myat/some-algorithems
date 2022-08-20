@@ -11,3 +11,8 @@ function minimumBribes(q) {
   else console.log(num)
 }
 
+/**
+ 1 2 3 4 5 
+ given order 2 1 5 3 4
+  1>3  --> looping start --> j=6,  
+ */
